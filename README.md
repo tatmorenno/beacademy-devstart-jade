@@ -1,64 +1,87 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Sobre o Projeto
 
-## About Laravel
+Criar um **CHECKOUT** para uma **PLATAFORMA** de **VENDAS ONLINE**
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Este checkout será criado em PHP, utilizando a Framework Laravel
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+*O contexto deste projeto é mínimo no que diz respeito a operações de e-commerce e foca na efetivação do pagamento, portanto questões como logística, descontos e afins não serão levados em consideração na descrição e execução do projeto.*
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+# Requisitos
 
-## Learning Laravel
+- Banco de dados Mysql
+- Autenticação e Cadastro de Usuários
+- Cadastro de Produtos
+- Cadastro de Pedidos
+- Checkout
+- Api de **Paylivre** para efetivação dos pagamentos (anexar documentação)
+- Criação de testes unitários para todas as regras de negócio
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+# Regras de negocio
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Cadastro de Usuários
 
-## Laravel Sponsors
+Deverá possuir 2 tipos de cadastro. Um “Administrador” que será responsável por realizar o cadastro de produtos na plataforma, também poderá visualizar e gerenciar os pedidos de todos os usuários. Para o usuário “Padrão” este poderá apenas escolher os produtos desejados e realizar a compra na plataforma, em sua área restrita poderá ver os próprios pedidos.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Os dados básicos de cadastro de usuários são:
 
-### Premium Partners
+- Nome
+- E-mail
+- Telefone
+- Endereço
+- Data de nascimento
+- CPF
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+## Cadastro de Produtos
 
-## Contributing
+Para o cadastro de produtos, deverá ser possível cadastrar as seguintes informações
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- Nome do produto
+- Descrição do produto
+- Quantidade
+- Preço de custo
+- Preço de venda
+- Foto principal
 
-## Code of Conduct
+## Cadastro de Pedidos
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+O cadastro de pedidos ocorrerá durante o processo de checkout, uma vez que o cliente selecinar os produtos que deseja adquirir e realizar o pagamento. Será importante registrar para o Cadastro de Pedidos os **produtos que foram adquiridos**, o **cliente que comprou** assim como o **status do pagamento**.
 
-## Security Vulnerabilities
+## Checkout
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Durante o checkout, o cliente deverá selecionar os produtos que deseja adquirir e definir a forma de pagamento - para efetivação de pagamento utilizaremos a solução da Paylivre. Após realizar o pagamento, o cliente deverá ser informado sobre o status do seu pagamento: sendo **Aprovado**, **Recusado** ou **Processando**.
 
-## License
+### Atualização de status do pagamento
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+O sistema deverá possuir uma rotina para monitorar os pagamentos que estiverem sendo processados. Utilizaremos o serviço de webhook da Paylivre.
+
+**Notificações**
+
+- O cliente recebe um e-mail toda vez que um novo pedido é realizado
+- O cliente recebe um e-mail toda vez que algum pedido sofre alteração de status
+
+## Instalando o projeto
+
+Abra o terminal e faça os seguintes comandos:
+
+// Clonar o projeto
+git clone https://github.com/tatmorenno/beacademy-devstart-jade.git
+
+// Acessar a pasta do projeto
+cd beacademy-devstart-jade
+
+// Atualizar o composer
+composer update
+
+//Configurar arquivo .env
+Vá até o arquivo .env.exemple e renomeie para .env
+Insira usas credenciais de acesso ao banco de dados
+
+// Gerar key
+php artisan key:generate
+
+// Iniciar projeto
+php artisan serve
+
+## Contribuintes 
+
