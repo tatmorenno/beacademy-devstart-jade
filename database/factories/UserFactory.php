@@ -19,14 +19,12 @@ class UserFactory extends Factory
     {
         return [
             'is_admin' => 0,
-            'name' => $this->faker->name(),
+            'name' => $this->faker->firstName() . " " . $this->faker->lastName(),
             'email' => $this->faker->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => bcrypt(now() . Str::random(10)), // password
             'remember_token' => Str::random(10),
             'phone' => $this->faker->phoneNumber(),
-            'address' => $this->faker->streetAddress(),
-            'postal_code' => $this->faker->postcode(),
             'birth_date' => $this->faker->dateTimeBetween()->format('d/m/Y'),
             'cpf' =>  $this->faker->cpf,
         ];

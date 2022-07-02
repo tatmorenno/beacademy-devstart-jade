@@ -14,7 +14,6 @@ class UsersSeeder extends Seeder
      */
     public function run()
     {
-        $faker = \Faker\Factory::create('pt_BR');
         \App\Models\User::factory()->create([
             'name' => 'Administrador Jade Shopp',
             'email' => 'js.admin@jadeshopp.com',
