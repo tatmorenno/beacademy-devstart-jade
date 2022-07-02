@@ -17,16 +17,16 @@
                             <span class="h1 fw-bold mb-0">Jade Shopp</span>
                         </div>
 
-                        <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Entrar com sua conta</h5>
+                        <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Acesse sua conta</h5>
 
                         <div class="form-outline mb-4">
-                            <input type="email" id="formEmail" class="form-control form-control-lg" />
-                            <label class="form-label" for="form2Email">Email</label>
+                             <label class="form-label" for="form2Email">Email</label>
+                            <input type="email" id="formEmail" class="form-control form-control-lg" />   
                         </div>
 
                         <div class="form-outline mb-4">
-                            <input type="password" id="formPassword" class="form-control form-control-lg" />
                             <label class="form-label" for="formPassword">Senha</label>
+                            <input type="password" id="formPassword" class="form-control form-control-lg" />
                         </div>
 
                         <div class="pt-1 mb-2">
