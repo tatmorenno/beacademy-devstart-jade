@@ -24,13 +24,15 @@ class UserController extends Controller
     public function store(Request $request)
     {
        $data = $request->all();
-       $data['password'] = bcrypt($request->password);
 
        if(User::where('email','=', $request->email)->exists() ) {
-            return redirect()->route('users.create_error');
-            exit;
+           return redirect()->route('users.create_error');
+           exit;
         }
 
+        $data['password'] = bcrypt(now(), $request->password);
+        $data['is_admin'] = 0;
+        
         $this->model->create($data);
 
         return redirect()->route('users.create_success');
