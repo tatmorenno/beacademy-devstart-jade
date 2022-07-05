@@ -6,7 +6,7 @@
 <section>
     <div class="card shadow">
         <div class="row g-0">
-            <div class="col-md-8">
+            <div class="col-md-7">
                 <div class="card-body">
                     <form action="{{route('users.store')}}" method="post">
                         @csrf
@@ -26,6 +26,26 @@
                             <label class="form-label" for="formPassword">Senha</label>
                         </div>
 
+                        <div class="form-outline mb-2">
+                            <input type="text" id="formAddress" class="form-control form-control-lg" required />
+                            <label class="form-label" for="formAdress">Endereço</label>
+                        </div>
+
+                        <div class="form-outline mb-2">
+                            <input type="number" id="formPostCode" class="form-control form-control-lg" required />
+                            <label class="form-label" for="formPostCode">CEP</label>
+                        </div>
+
+                        <div class="form-outline mb-2">
+                            <input type="date" id="formBirthday" class="form-control form-control-lg" required />
+                            <label class="form-label" for="formBirthday">Data de nascimento</label>
+                        </div>
+
+                        <div class="form-outline mb-2">
+                            <input type="number" id="formCPF" class="form-control form-control-lg" minlength="11" required />
+                            <label class="form-label" for="formCPF">CPF</label>
+                        </div>
+
                         <div class="pt-1 mb-4">
                             <button class="btn btn-success btn-lg btn-block" type="submit">Criar conta</button>
                         </div>
@@ -36,7 +56,7 @@
                     </form>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-5">
                 <img src="https://cdn.pixabay.com/photo/2019/08/08/20/29/squirrel-4393784_960_720.jpg" class="img-fluid rounded-end h-100" alt="Imagem da pádina de cadastro de usuário">
             </div>
         </div>
