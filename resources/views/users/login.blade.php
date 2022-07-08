@@ -19,9 +19,10 @@
 
                         <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Acesse sua conta</h5>
 
+
                         <div class="form-outline mb-4">
-                             <label class="form-label" for="form2Email">Email</label>
-                            <input type="email" id="formEmail" class="form-control form-control-lg" />   
+                             <label class="form-label" for="formEmail">Email</label>
+                            <input type="email" id="formEmail" class="form-control form-control-lg" />
                         </div>
 
                         <div class="form-outline mb-4">
