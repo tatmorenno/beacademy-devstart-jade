@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreUpdateUserFormRequest;
 
 class UserController extends Controller
 {
@@ -21,18 +21,9 @@ class UserController extends Controller
         return view('users.create');
     }
 
-    public function store(Request $request)
+    public function store(StoreUpdateUserFormRequest $request)
     {
         $data = $request->all();
-
-        if(User::where('email','=', $data['email'])->exists() ) {
-            return redirect()->route('users.email_error');
-            exit;
-         }
-         if(User::where('cpf','=', $data['cpf'])->exists() ) {
-            return redirect()->route('users.cpf_error');
-            exit;
-         }
 
         $data['password'] = bcrypt($request->password);
         $data['is_admin'] = 0;
