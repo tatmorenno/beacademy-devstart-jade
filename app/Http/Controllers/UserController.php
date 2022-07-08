@@ -23,24 +23,34 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-       $data = $request->all();
+        $data = $request->all();
 
-       if(User::where('email','=', $request->email)->exists() ) {
-           return redirect()->route('users.create_error');
-           exit;
-        }
+        if(User::where('email','=', $data['email'])->exists() ) {
+            return redirect()->route('users.email_error');
+            exit;
+         }
+         if(User::where('cpf','=', $data['cpf'])->exists() ) {
+            return redirect()->route('users.cpf_error');
+            exit;
+         }
 
-        $data['password'] = bcrypt(now(), $request->password);
+        $data['password'] = bcrypt($request->password);
         $data['is_admin'] = 0;
-        
+
         $this->model->create($data);
 
         return redirect()->route('users.create_success');
+
     }
 
-    public function create_error()
+    public function email_error()
     {
-        return view('users.create_error');
+        return view('users.email_error');
+    }
+
+    public function cpf_error()
+    {
+        return view('users.cpf_error');
     }
 
     public function create_success()
