@@ -17,13 +17,34 @@
                         <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Crie sua conta</h5>
 
                         <div class="form-outline mb-4">
-                            <input type="email" id="formEmail" class="form-control form-control-lg" required />
-                            <label class="form-label" for="formEmail">Email</label>
+                            <label class="form-label" for="name">Nome Completo</label>
+                            <input type="text" id="name" name="name" class="form-control form-control-lg" required />
                         </div>
 
                         <div class="form-outline mb-4">
-                            <input type="password" id="formPassword" class="form-control form-control-lg" required />
-                            <label class="form-label" for="formPassword">Senha</label>
+                            <label class="form-label" for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-control form-control-lg" required />
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="password">Senha</label>
+                            <input type="password" id="password" name="password" class="form-control form-control-lg" required />
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="phone-number">Telefone</label>
+                            <input type="text" id="phone-number" name="phone-number" class="form-control form-control-lg" onkeypress="$(this).mask('(00) 00009-0000')" required />
+                        </div>
+
+
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="birth-date">Data de nascimento</label>
+                            <input type="date" id="birth-date" name="birth-date" class="form-control form-control-lg" required />
+                        </div>
+
+                        <div class="form-outline mb-4">
+                            <label class="form-label" for="cpf">CPF</label>
+                            <input type="text" id="cpf" name="cpf" class="form-control form-control-lg" onkeypress="$(this).mask('000.000.000-00');" required />
                         </div>
 
                         <div class="pt-1 mb-4">
@@ -41,4 +62,8 @@
         </div>
     </div>
 </section>
+@endsection
+
+@section('scripts')
+<script src="{{ asset('js/mask.js') }}"></script>
 @endsection
