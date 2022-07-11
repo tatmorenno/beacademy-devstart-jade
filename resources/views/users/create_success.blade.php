@@ -9,8 +9,8 @@
             <div class="col-md-8">
                 <div class="card-body">
                     <h1>Pronto! 😁</h1>
-                    <p>Seu cadastro foi realizado co sucesso.</p>
-                    <a class="btn btn-success" href="{{ route('users.login') }}">Voltar</a>
+                    <p>Seu cadastro foi realizado com sucesso.</p>
+                    <a class="btn btn-success" href="{{ route('login') }}">Voltar</a>
                 </div>
             </div>
         </div>
