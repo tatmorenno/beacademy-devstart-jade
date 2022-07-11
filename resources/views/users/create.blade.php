@@ -30,8 +30,7 @@
                             <button class="btn btn-success btn-lg btn-block" type="submit">Criar conta</button>
                         </div>
 
-                        <p class="mb-5 pb-lg-2" style="color: #393f81;">Já tem uma conta? <a href="{{ route('users.login') }}"
-                            style="color: #393f81;">Click aqui para logar</a>
+                        <p class="mb-5 pb-lg-2" style="color: #393f81;">Já tem uma conta? <a href="{{ route('users.login') }}" style="color: #393f81;">Click aqui para logar</a>
                         </p>
                     </form>
                 </div>
