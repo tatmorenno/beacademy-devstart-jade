@@ -25,41 +25,34 @@ class StoreUpdateUserFormRequest extends FormRequest
     {
         $id = $this->id ?? '';
         return [
-            'name'=>[
+            'name' => [
                 'required',
                 'string',
                 'max:50',
                 'min:3'
             ],
-            'email'=>[
+            'email' => [
                 'required',
                 'email',
                 'unique:users,email,{$id},id',
             ],
-            'cpf'=>[
+            'cpf' => [
                 'required',
                 'unique:users,cpf,{$id},id',
                 'digits:11',
             ],
-            'password'=>[
+            'password' => [
                 'required',
                 'min:4',
                 'max:12'
             ],
-            'phone' =>[
+            'phone' => [
                 'required'
             ],
-            'address' =>[
-                'required'
-            ],
-            'birth_date' =>[
+            'birth_date' => [
                 'required',
                 'before:today'
             ],
-            'postal_code' =>[
-                'required',
-                'digits:8'
-            ]
         ];
     }
     public function messages()
