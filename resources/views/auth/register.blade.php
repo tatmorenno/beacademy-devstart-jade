@@ -1,59 +1,109 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+@extends('template.login');
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+@section('title', "Cadastro")
 
-        <form method="POST" action="{{ route('register') }}">
-            @csrf
+@section('body')
+<section>
+    <div class="card shadow m-4">
+        <div class="row g-0">
+            <div class="col-md-7">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-3 pb-1">
+                        <span class="h1 fw-bold mb-0">Jade Shopp</span>
+                    </div>
 
-            <!-- Name -->
-            <div>
-                <x-label for="name" :value="__('Name')" />
+                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Crie sua conta</h5>
+                    <form action="{{ route('users.store') }}" method="POST">
+                        @csrf
 
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+                        <div class="form-group mb-4">
+                            <label class="form-label" for="formName">Nome</label>
+                            <input type="text" id="formName" class="form-control form-control-lg @error('name')
+                                is-invalid
+                            @enderror" name="name" value="{{ old('name') }}" />
+
+                            @error('name')
+                            <div class="invalid-feedback">
+                                {{$message}}
+                            </div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label class="form-label" for="formEmail">Email</label>
+                            <input type="text" id="formEmail" class="form-control form-control-lg  @error('email')
+                                is-invalid
+                            @enderror" name="email" value="{{ old('email') }}" />
+                            @error('email')
+                            <div class="invalid-feedback">
+                                {{$message}}
+                            </div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label class="form-label" for="formCPF">Telefone</label>
+                            <input type="number" id="formPhone" class="form-control form-control-lg  @error('phone')
+                                is-invalid
+                            @enderror" name="phone" value="{{ old('phone') }}" />
+                            @error('phone')
+                            <div class="invalid-feedback">
+                                {{$message}}
+                            </div>
+                            @enderror
+                        </div>
+
+
+                        <div class="form-group mb-4">
+                            <label class="form-label" for="formBirthday">Data de nascimento</label>
+                            <input type="date" id="formBirthday" class="form-control form-control-lg  @error('birth_date')
+                                is-invalid
+                            @enderror" name="birth_date" value="{{ old('bith_date') }}" />
+                            @error('birth_date')
+                            <div class="invalid-feedback">
+                                {{$message}}
+                            </div>
+                            @enderror
+                        </div>
+
+
+                        <div class="form-group mb-4">
+                            <label class="form-label" for="formCPF">CPF</label>
+                            <input type="number" id="formCPF" class="form-control form-control-lg  @error('cpf')
+                                is-invalid
+                            @enderror" name="cpf" value="{{ old('cpf') }}" />
+                            @error('cpf')
+                            <div class="invalid-feedback">
+                                {{$message}}
+                            </div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label class="form-label" for="formPassword">Senha</label>
+                            <input type="password" id="formPassword" class="form-control form-control-lg  @error('password')
+                                is-invalid
+                            @enderror" name="password" value="{{ old('password') }}" />
+                            @error('password')
+                            <div class="invalid-feedback">
+                                {{$message}}
+                            </div>
+                            @enderror
+                        </div>
+
+                        <div class="pt-1 mb-4">
+                            <button class="btn btn-success btn-lg btn-block" type="submit">Criar conta</button>
+                        </div>
+
+                        <p class="mb-5 pb-lg-2" style="color: #393f81;">Já tem uma conta? <a href="{{ route('login') }}" style="color: #393f81;">Click aqui para logar</a>
+                        </p>
+                    </form>
+                </div>
             </div>
-
-            <!-- Email Address -->
-            <div class="mt-4">
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required />
+            <div class="col-md-5">
+                <img src="https://cdn.pixabay.com/photo/2019/08/08/20/29/squirrel-4393784_960_720.jpg" class="img-fluid rounded-end h-100" alt="Imagem da pádina de cadastro de usuário">
             </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="new-password" />
-            </div>
-
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
-
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                type="password"
-                                name="password_confirmation" required />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
-                </a>
-
-                <x-button class="ml-4">
-                    {{ __('Register') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+        </div>
+    </div>
+</section>
+@endsection
