@@ -31,7 +31,6 @@ class UserController extends Controller
         $this->model->create($data);
 
         return redirect()->route('users.create_success');
-
     }
 
     public function email_error()

@@ -20,12 +20,12 @@
                             <label class="form-label" for="formName">Nome</label>
                             <input type="text" id="formName" class="form-control form-control-lg @error('name')
                                 is-invalid
-                            @enderror" name="name" value="{{ old('name') }}"/>
+                            @enderror" name="name" value="{{ old('name') }}" />
 
                             @error('name')
-                                <div class="invalid-feedback">
-                                    {{$message}}
-                                </div>
+                            <div class="invalid-feedback">
+                                {{$message}}
+                            </div>
                             @enderror
                         </div>
 
@@ -35,57 +35,34 @@
                                 is-invalid
                             @enderror" name="email" value="{{ old('email') }}" />
                             @error('email')
-                                <div class="invalid-feedback">
-                                    {{$message}}
-                                </div>
+                            <div class="invalid-feedback">
+                                {{$message}}
+                            </div>
                             @enderror
                         </div>
 
                         <div class="form-group mb-4">
-                            <label class="form-label" for="formCPF">telefone</label>
+                            <label class="form-label" for="formCPF">Telefone</label>
                             <input type="number" id="formPhone" class="form-control form-control-lg  @error('phone')
                                 is-invalid
                             @enderror" name="phone" value="{{ old('phone') }}" />
                             @error('phone')
-                                <div class="invalid-feedback">
-                                    {{$message}}
-                                </div>
+                            <div class="invalid-feedback">
+                                {{$message}}
+                            </div>
                             @enderror
                         </div>
 
-                        <div class="form-group mb-4">
-                            <label class="form-label" for="formAdress">Endereço</label>
-                            <input type="text" id="formAddress" class="form-control form-control-lg  @error('address')
-                                is-invalid
-                            @enderror" name="address" value="{{ old('address') }}"/>
-                            @error('address')
-                                <div class="invalid-feedback">
-                                    {{$message}}
-                                </div>
-                            @enderror
-                        </div>
-
-                        <div class="form-group mb-4">
-                            <label class="form-label" for="formPostCode">CEP</label>
-                            <input type="number" id="formPostCode" class="form-control form-control-lg  @error('postal_code')
-                                is-invalid
-                            @enderror" name="postal_code" value="{{ old('postal_code') }}"/>
-                            @error('postal_code')
-                                <div class="invalid-feedback">
-                                    {{$message}}
-                                </div>
-                            @enderror
-                        </div>
 
                         <div class="form-group mb-4">
                             <label class="form-label" for="formBirthday">Data de nascimento</label>
                             <input type="date" id="formBirthday" class="form-control form-control-lg  @error('birth_date')
                                 is-invalid
-                            @enderror" name="birth_date" value="{{ old('bith_date') }}"/>
+                            @enderror" name="birth_date" value="{{ old('bith_date') }}" />
                             @error('birth_date')
-                                <div class="invalid-feedback">
-                                    {{$message}}
-                                </div>
+                            <div class="invalid-feedback">
+                                {{$message}}
+                            </div>
                             @enderror
                         </div>
 
@@ -94,11 +71,11 @@
                             <label class="form-label" for="formCPF">CPF</label>
                             <input type="number" id="formCPF" class="form-control form-control-lg  @error('cpf')
                                 is-invalid
-                            @enderror" name="cpf" value="{{ old('cpf') }}"/>
+                            @enderror" name="cpf" value="{{ old('cpf') }}" />
                             @error('cpf')
-                                <div class="invalid-feedback">
-                                    {{$message}}
-                                </div>
+                            <div class="invalid-feedback">
+                                {{$message}}
+                            </div>
                             @enderror
                         </div>
 
@@ -106,11 +83,11 @@
                             <label class="form-label" for="formPassword">Senha</label>
                             <input type="password" id="formPassword" class="form-control form-control-lg  @error('password')
                                 is-invalid
-                            @enderror" name="password" value="{{ old('password') }}"/>
+                            @enderror" name="password" value="{{ old('password') }}" />
                             @error('password')
-                                <div class="invalid-feedback">
-                                    {{$message}}
-                                </div>
+                            <div class="invalid-feedback">
+                                {{$message}}
+                            </div>
                             @enderror
                         </div>
 
@@ -118,8 +95,7 @@
                             <button class="btn btn-success btn-lg btn-block" type="submit">Criar conta</button>
                         </div>
 
-                        <p class="mb-5 pb-lg-2" style="color: #393f81;">Já tem uma conta? <a href="{{ route('users.login') }}"
-                            style="color: #393f81;">Click aqui para logar</a>
+                        <p class="mb-5 pb-lg-2" style="color: #393f81;">Já tem uma conta? <a href="{{ route('users.login') }}" style="color: #393f81;">Click aqui para logar</a>
                         </p>
                     </form>
                 </div>

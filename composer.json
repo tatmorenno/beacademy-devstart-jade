@@ -14,6 +14,7 @@
         "mbezhanov/faker-provider-collection": "^2.0"
     },
     "require-dev": {
+        "laravel/breeze": "^1.10",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.1",

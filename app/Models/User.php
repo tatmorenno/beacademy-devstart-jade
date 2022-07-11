@@ -25,7 +25,6 @@ class User extends Authenticatable
         'cpf',
         'password',
         'is_admin',
-        'email_verified_at'
 
     ];
 
