@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <title>Jade Shop</title>
 
-    <style>        
+    <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
             text-anchor: middle;
@@ -34,15 +34,15 @@
             position: fixed;
             right: 0;
             bottom: 0;
-            min-width: 100%; 
+            min-width: 100%;
             min-height: 100%;
-            max-width:100%;
+            max-width: 100%;
         }
 
         .content {
             position: fixed;
             bottom: 0;
-            background-color: rgba(0,0,0,.5)  !important;
+            background-color: rgba(0, 0, 0, .5) !important;
             color: white !important;
             width: 100%;
         }
@@ -51,9 +51,8 @@
             position: fixed;
             z-index: 9999;
             width: 100%;
-            background-color: rgba(0,0,0,.5) !important;
+            background-color: rgba(0, 0, 0, .5) !important;
         }
-
     </style>
 
 </head>
@@ -75,7 +74,7 @@
         </header>
 
         <video autoplay muted loop id="myVideo">
-            <source src="{{ asset('storage/jade.mp4') }}" type="video/mp4">
+            <source src="{{ asset('assets/img/jade.mp4') }}" type="video/mp4">
             Your browser does not support HTML5 video.
         </video>
 
