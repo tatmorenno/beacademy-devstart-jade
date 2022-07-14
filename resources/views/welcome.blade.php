@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <title>Jade Shop</title>
 
-    <style>
+    <style>        
         .bd-placeholder-img {
             font-size: 1.125rem;
             text-anchor: middle;
@@ -23,14 +23,47 @@
                 font-size: 3.5rem;
             }
         }
+
+        body {
+            margin: 0;
+            font-family: Arial;
+            font-size: 17px;
+        }
+
+        #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%; 
+            min-height: 100%;
+            max-width:100%;
+        }
+
+        .content {
+            position: fixed;
+            bottom: 0;
+            background-color: rgba(0,0,0,.5)  !important;
+            color: white !important;
+            width: 100%;
+        }
+
+        header {
+            position: fixed;
+            z-index: 9999;
+            width: 100%;
+            background-color: rgba(0,0,0,.5) !important;
+        }
+
     </style>
 
 </head>
 
-<body class="d-flex h-100 text-center text-white" style="background: no-repeat center/100% url(https://cdn.pixabay.com/photo/2016/04/20/18/38/portugal-1341707_960_720.jpg);">
+
+<body class="d-flex h-100 text-center text-white">
 
     <div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
-        <header class="mb-auto p-4 bg-success">
+
+        <header class="mb-auto p-4">
             <div>
                 <h3 class="float-md-start mb-0">Jade Shopp</h3>
                 <nav class="nav nav-masthead justify-content-center float-md-end">
@@ -41,11 +74,16 @@
             </div>
         </header>
 
-        <main class="px-3 bg-light text-success border rounded mx-3 p-3 shadow">
-            <h1>Bem vindo ao projeto empresarial do Team Jade.</h1>
+        <video autoplay muted loop id="myVideo">
+            <source src="{{ asset('storage/jade.mp4') }}" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+
+        <main class="content bg-light text-success shadow">
+            <!-- <h1 class="mt-2">Bem vindo ao projeto empresarial do Team Jade.</h1>
             <p class="lead">Projeto desenvolvido com Laravel integrado com MySQL e utilizando a Api de <b>Paylivre</b> para efetivação dos pagamentos.</p>
-            <p class="lead">O contexto deste projeto é mínimo no que diz respeito a operações de e-commerce e foca na efetivação do pagamento, portanto questões como logística, descontos e afins não serão levados em consideração na descrição e execução do projeto.</p>
-            <a href="{{ route('login') }}" class="btn btn-lg btn-success fw-bold border-white">Vamos começar?</a>
+            <p class="lead">O contexto deste projeto é mínimo no que diz respeito a operações de e-commerce e foca na efetivação do pagamento, portanto questões como logística, descontos e afins não serão levados em consideração na descrição e execução do projeto.</p> -->
+            <a href="{{ route('login') }}" class="btn btn-lg btn-success fw-bold border-white mb-1 mt-4">Comprar!</a>
             </p>
         </main>
 
