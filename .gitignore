@@ -12,3 +12,12 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+resources/views/.DS_Store
+.gitignore
+app/Http/Requests/.DS_Store
+app/Http/.DS_Store
+app/View/.DS_Store
+app/Http/Controllers/.DS_Store
+database/.DS_Store
+bootstrap/.DS_Store
+.DS_Store
