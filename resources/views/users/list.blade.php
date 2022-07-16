@@ -18,6 +18,7 @@
                     <th scope="col">Nome</th>
                     <th scope="col">e-mail</th>
                     <th scope="col">Data de Cadastro</th>
+                    <th scope="col">Última atualização</th>
                     <th scope="col">Ações</th>
                 </tr>
             </thead>
@@ -28,7 +29,8 @@
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
                         <td>{{ date('d/m/Y', strtotime($user->created_at)) }}</td>
-                        <td><a href="{{ route('users.show', $user->id) }}" class="btn btn-info text-white">Visualizar</a></td>
+                        <td>{{ date('d/m/Y', strtotime($user->updated_at)) }}</td>
+                        <td><a href="{{ route('users.show', $user->id) }}" class="btn btn-success text-white">Visualizar</a></td>
                     </tr>
                 @endforeach
             </tbody>

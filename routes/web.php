@@ -33,5 +33,7 @@ Route::get('/cadastro/erroemail', [UserController::class , 'email_error'])->name
 Route::get('/cadastro/errocpf', [UserController::class , 'cpf_error'])->name('users.cpf_error');
 Route::get('/cadastro/sucesso', [UserController::class , 'create_success'])->name('users.create_success');
 
+Route::put('/users/{id}', [UserController::class,'updateUsers'])->name('users.update');
+Route::get('/users/{id}/edit',[UserController::class,'editUsers'])->name('users.edit');
 Route::get('/users', [UserController::class , 'listUsers'])->name('users.list');
 Route::get('/users/{id}', [UserController::class , 'showUsers'])->name('users.show');

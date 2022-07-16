@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Http\Requests\StoreUpdateUserFormRequest;
+use Symfony\Component\HttpFoundation\Request;
 
 class UserController extends Controller
 {
@@ -64,4 +65,25 @@ class UserController extends Controller
         return view('users.show', compact('user', 'title'));
     }
 
+    public function editUsers($id)
+    {
+        if (!$user = $this->model->find($id))
+            return redirect()->route('users.list');
+
+        return view('users.edit', compact('user'));
+    }
+
+    public function updateUsers(Request $request, $id)
+    {
+        if (!$user = $this->model->find($id))
+            return redirect()->route('users.list');
+
+        $data = $request->all(); //only('nome', 'email')
+
+        if ($request->password)
+            $data['password'] = bcrypt($request->password);
+
+        $user->update($data);
+        return redirect()->route('users.list');
+    }
 }
