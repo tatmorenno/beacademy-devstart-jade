@@ -15,8 +15,17 @@ class UserFactory extends Factory
      *
      * @return array<string, mixed>
      */
+
     public function definition()
     {
+
+
+        $phone = $this->faker->phoneNumber();
+        $formatted_phone = str_replace(array('\'', '"', ',', ';', '<', '>', '(', ')', '-', ' '), '', $phone);
+
+        $cpf = $this->faker->cpf;
+        $formatted_cpf = str_replace(array('\'', '"', ',', ';', '<', '>', '(', ')', '-', '.', ' '), '', $cpf);
+
         return [
             'is_admin' => 0,
             'name' => $this->faker->firstName() . " " . $this->faker->lastName(),
@@ -24,9 +33,9 @@ class UserFactory extends Factory
             'email_verified_at' => now(),
             'password' => bcrypt(now() . Str::random(10)), // password
             'remember_token' => Str::random(10),
-            'phone' => $this->faker->phoneNumber(),
-            'birth_date' => $this->faker->dateTimeBetween()->format('d/m/Y'),
-            'cpf' =>  $this->faker->cpf,
+            'phone' => $formatted_phone,
+            'birth_date' => $this->faker->dateTimeBetween()->format('Y-m-d'),
+            'cpf' =>  $formatted_cpf,
         ];
     }
 

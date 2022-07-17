@@ -78,7 +78,7 @@ class UserController extends Controller
         if (!$user = $this->model->find($id))
             return redirect()->route('users.list');
 
-        $data = $request->all(); //only('nome', 'email')
+        $data = $request->all();
 
         if ($request->password)
             $data['password'] = bcrypt($request->password);
