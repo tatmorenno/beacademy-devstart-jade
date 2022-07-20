@@ -78,7 +78,7 @@ class UserController extends Controller
         if (!$user = $this->model->find($id))
             return redirect()->route('users.list');
 
-        $data = $request->all(); //only('nome', 'email')
+        $data = $request->all();
 
         if ($request->password)
             $data['password'] = bcrypt($request->password);
@@ -86,4 +86,14 @@ class UserController extends Controller
         $user->update($data);
         return redirect()->route('users.list');
     }
+
+    public function destroyUsers($id)
+    {
+        if (!$user = $this->model->find($id))
+            return redirect()->route('users.list');
+
+        $user->delete();
+        return redirect()->route('users.list');
+    }
+
 }
