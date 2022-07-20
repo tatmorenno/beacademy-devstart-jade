@@ -8,11 +8,6 @@ use Illuminate\Http\Request;
 class ProductController extends Controller
 {
 
-    // public function __construct(Product $product)
-    // {
-    //     $this->model = $product;
-    // }
-
     public function index()
     {
         $products = Product::all();
