@@ -32,7 +32,12 @@
                         <td>{{ date('d/m/Y', strtotime($user->updated_at)) }}</td>
                         <td>
                             <a href="{{ route('users.edit', $user->id) }}" class="btn btn-warning text-white">Editar</a>
-                            <a href="" class="btn btn-danger text-white">Excluir</a>
+                            
+                            <form class="d-inline-block" action="{{ route('users.destroy', $user->id) }}" method="POST">
+                                @method('DELETE')
+                                @csrf
+                                <button type="submit"class="btn btn-danger text-white">Excluir</button>
+                            </form>
                         </td>
                     </tr>
             </tbody>

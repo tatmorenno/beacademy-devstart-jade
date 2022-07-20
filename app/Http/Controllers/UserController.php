@@ -86,4 +86,14 @@ class UserController extends Controller
         $user->update($data);
         return redirect()->route('users.list');
     }
+
+    public function destroyUsers($id)
+    {
+        if (!$user = $this->model->find($id))
+            return redirect()->route('users.list');
+
+        $user->delete();
+        return redirect()->route('users.list');
+    }
+
 }
