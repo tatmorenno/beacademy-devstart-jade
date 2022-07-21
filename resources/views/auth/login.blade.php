@@ -11,7 +11,7 @@
             </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form class="needs-validation" method="POST" action="{{ route('login') }}" novalidate>
                         @csrf
                         <div class="d-flex align-items-center mb-3 pb-1">
                             <span class="h1 fw-bold mb-0">Jade Shopp</span>
@@ -22,12 +22,22 @@
 
                         <div class="form-outline mb-4">
                             <label class="form-label" for="formEmail">Email</label>
-                            <input type="email" id="formEmail" name="email" class="form-control form-control-lg" value="{{ old('email') }}" required autofocus />
+                            <input type="email" id="formEmail" name="email" class="form-control form-control-lg @error('email') is-invalid @enderror" value="{{ old('email') }}" required autofocus />
+                            @error('email')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
                         </div>
 
                         <div class="form-outline mb-4">
                             <label class="form-label" for="formPassword">Senha</label>
-                            <input type="password" id="formPassword" name="password" class="form-control form-control-lg" required />
+                            <input type="password" id="formPassword" name="password" class="form-control form-control-lg @error('password') is-invalid @enderror" required />
+                            @error('password')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
                         </div>
 
                         <div class="pt-1 mb-2">

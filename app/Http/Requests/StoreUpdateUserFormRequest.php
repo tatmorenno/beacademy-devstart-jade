@@ -63,7 +63,7 @@ class StoreUpdateUserFormRequest extends FormRequest
             'unique' => 'O :attribute já possui uma conta vinculada',
             'max' => 'O :attribute não pode ser maior que :max caracteres',
             'email' => 'O email precisa ser um email válido',
-            'digits' => 'O campo :attribute precisa ter :digits digitos',
+            'digits' => 'O campo :attribute precisa ter :digits dígitos',
             'before' => 'A data de nascimento inválida'
         ];
     }
