@@ -6,8 +6,8 @@
 <section>
     <div class="container mt-5">
 
-        <h3 class="pt-5 text-center text-white">Nossos Produtos</h3>
-        <p class="pb-3 text-center text-white">Aproveite nossa promoção!</p>
+        <h3 class="pt-5 text-center text-black">Nossos Produtos</h3>
+        <p class="pb-3 text-center text-black">Aproveite nossa promoção!</p>
 
         <div class="d-flex justify-content-center">
 
