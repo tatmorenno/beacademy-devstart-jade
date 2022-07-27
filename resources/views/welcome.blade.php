@@ -68,7 +68,6 @@
                 <nav class="nav nav-masthead justify-content-center float-md-end">
                     <a class="nav-link text-white" href="{{ route('login') }}">Login</a>
                     <a class="nav-link text-white" href="{{ route('register') }}">Cadastrar</a>
-                    <!-- <a class="nav-link text-white" href="{{ route('admin.login')}}">Admin</a> -->
                 </nav>
             </div>
         </header>
@@ -79,9 +78,6 @@
         </video>
 
         <main class="content bg-light text-success shadow">
-            <!-- <h1 class="mt-2">Bem vindo ao projeto empresarial do Team Jade.</h1>
-            <p class="lead">Projeto desenvolvido com Laravel integrado com MySQL e utilizando a Api de <b>Paylivre</b> para efetivação dos pagamentos.</p>
-            <p class="lead">O contexto deste projeto é mínimo no que diz respeito a operações de e-commerce e foca na efetivação do pagamento, portanto questões como logística, descontos e afins não serão levados em consideração na descrição e execução do projeto.</p> -->
             <a href="{{ route('login') }}" class="btn btn-lg btn-success fw-bold border-white mb-1 mt-4">Comprar!</a>
             </p>
         </main>
