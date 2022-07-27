@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -13,6 +14,34 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
+
+    public function test_check_if_user_can_see_users_list()
+    {
+        $user = User::factory()->create();
+        $this->actingAs($user);
+        $response = $this->get('/admin/users');
+        $response->assertStatus(302);
+    }
+
+    public function test_check_if_user_can_see_edit_user()
+    {
+        $user = User::factory()->create();
+        $this->actingAs($user);
+        $id = User::all()->random()->id;
+        $response = $this->get("/admin/users/{$id}/edit");
+        $response->assertStatus(302);
+    }
+
+    public function test_check_if_user_can_see_delete_user()
+    {
+        $user = User::factory()->create();
+        $this->actingAs($user);
+        $id = User::all()->random()->id;
+        $response = $this->actingAs($user)
+            ->delete("/admin/users/$id");
+        $response->assertStatus(302);
+    }
+
     public function test_check_if_user_can_see_products()
     {
         $user = User::factory()->create();
@@ -27,21 +56,23 @@ class ExampleTest extends TestCase
         $response->assertStatus(302);
     }
 
-    public function test_check_if_user_can_see_users_list()
+    public function test_check_if_user_can_see_edit_products()
     {
         $user = User::factory()->create();
+        $product = Product::factory()->create();
         $this->actingAs($user);
-        $response = $this->get('/admin/users');
-        $response->assertStatus(404);
+        $id = $product->id;
+        $response = $this->get("/admin/users/{$id}/edit");
+        $response->assertStatus(302);
     }
 
-    public function test_check_if_user_can_see_edit_user()
+    public function test_check_if_user_can_delete_products()
     {
         $user = User::factory()->create();
-        $this->actingAs($user);
-        $id = User::all()->random()->id;
-        $response = $this->get('/admin/users/$id/edit');
+        $product = Product::factory()->create();
+        $id = $product->id;
+        $response = $this->actingAs($user)
+            ->delete("/admin/products/{id}");
         $response->assertStatus(302);
-        User::all()->random()->id;
     }
 }
