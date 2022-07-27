@@ -45,7 +45,7 @@ Route::middleware('admin')->group(function () {
     Route::get('/admin/users/{id}', [UserController::class, 'showUsers'])->name('users.show');
     Route::put('/admin/users/{id}', [UserController::class, 'updateUsers'])->name('users.update');
     Route::get('/admin/users/{id}/edit', [UserController::class, 'editUsers'])->name('users.edit');
-    Route::delete('/admin//users/{id}', [UserController::class, 'destroyUsers'])->name('users.destroy');
+    Route::delete('/admin/users/{id}', [UserController::class, 'destroyUsers'])->name('users.destroy');
 
     // Products
     Route::get('/admin/products', [ProductController::class, 'indexAdmin'])->name('products.indexAdmin');
