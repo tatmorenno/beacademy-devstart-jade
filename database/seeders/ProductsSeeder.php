@@ -28,7 +28,7 @@ class ProductsSeeder extends Seeder
             Com uma estrutura única em liga de alumínio, o motorola edge 20 é ultraleve, mas super-resistente. Ele cabe fácil no bolso ou na bolsa. Com apenas 6,99 mm, é um dos aparelhos mais finos no mercado e o smartphone 5G mais fino que já produzimos.',
             'cost_price' => '2300.00',
             'sale_price' => '3200.90',
-            'image' => 'https://images.kabum.com.br/produtos/fotos/155473/smartphone-samsung-galaxy-s20-fe-128gb-6gb-ram-octa-core-camera-tripla-carregamento-super-rapido-cloud-navy-sm-g780gzbrzto_1620393794_gg.jpg',
+            'image' => 'https://images.kabum.com.br/produtos/fotos/219451/smartphone-motorola-xt2143-1-moto-edge-20-128gb-108mp-6-7-capa-protetora-preto-par00031br_1631969943_gg.jpg',
         ]);
 
         \App\Models\Product::factory()->create([
