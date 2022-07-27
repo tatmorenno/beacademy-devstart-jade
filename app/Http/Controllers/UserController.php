@@ -83,6 +83,7 @@ class UserController extends Controller
         if ($request->password)
             $data['password'] = bcrypt($request->password);
 
+        $data['password'] = $user->password;
         $user->update($data);
         return redirect()->route('users.list');
     }
@@ -95,5 +96,4 @@ class UserController extends Controller
         $user->delete();
         return redirect()->route('users.list');
     }
-
 }
