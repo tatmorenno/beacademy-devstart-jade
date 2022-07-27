@@ -1,13 +1,24 @@
+<div style="background-color: #069e6e">
+
 @extends('template.index');
 @section('title', "Produtos")
+
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+            <a href="" class="nav-link text-white">Home</a>
+            <a href="/products/admin/create" class="nav-link text-white">Novo produto</a>
+        </nav>
+        <hr>
+</div>
 
 @section('body')
 
 <section>
-    <div class="container mt-5">
 
-        <h2 class="pt-5 text-left text-black">Produtos cadastrados</h2>
+    <div class="container">
+
+        <h1 class="pt-5 text-left text-black">Produtos cadastrados</h1>
         <hr>
+        
         <div class="d-flex justify-content-center">
 
             <div class="row">
@@ -32,7 +43,7 @@
                         <!--    <th scope="row" class="align-middle">{{ $product->id }}</th> -->
                             <td class="align-middle"><img src="{{ $product->image }}" alt="Imagem do produto" style="width: 4rem;"></td>
                             <td class="align-middle">{{ $product->name }}</td>
-                            <td class="align-middle"><p>R${{ $product->sale_price  + 438}}</p></td>
+                            <td class="align-middle"><p>R$ {{ $product->sale_price + 438 }}</p></td>
                             <td class="align-middle"><p>R$ {{ $product->sale_price }}</p></td>
                             <td class="align-middle"><p>{{ $product->quantity }}</p></td>
                             <td class="align-middle">{{ date('d/m/Y', strtotime($product->updated_at)) }}</td>
@@ -42,7 +53,11 @@
                     </tbody>
                 </table>
             </div>
-</section>
+
+        </section>
+
+
+
 @endsection
 
 

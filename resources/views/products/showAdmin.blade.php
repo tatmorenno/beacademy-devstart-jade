@@ -58,7 +58,7 @@
                 <table class="table table-borderless table -striped align-items-center">
                     <thead class="text-left">
                         <tr>
-                            <td class="align-middle">
+                            <td class="align-middle" style="width:1900px">
                             <h6 class="fw-bold">DESCRIÇÃO DO PRODUTO</h6>   
                                 <p style="text-align: justify">{{ $product->description }}</p>
                             </td>

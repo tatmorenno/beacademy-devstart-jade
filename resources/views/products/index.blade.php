@@ -25,7 +25,7 @@
                             </div>
                             <div class="card-body">
                                 <h5 class="card-title fs-6">{{ $product->name }}</h5>
-                                <s class="card-text text-center px-2 text-secondary">R${{ $product->sale_price  + 438}}</s>
+                                <s class="card-text text-center px-2 text-secondary">R${{ $product->sale_price + 438}}</s>
                                 <p class="card-text text-center px-2 fs-5 fw-bold text-danger">R$ {{ $product->sale_price }}</p>
                                 <a href="/products" class="btn btn-primary px-5">Comprar</a>
                             </div>
