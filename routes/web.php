@@ -27,6 +27,9 @@ Route::middleware(['auth'])->group(function () {
     // Content after admin auth
     //if ($user->is_admin = 1) {
     //}
+    Route::get('/products/admin/create', [ProductController::class , 'createProductsAdmin'])->name('products.create');
+    Route::post('/products/admin/create', [ProductController::class,'storeCreateProductsAdmin'])->name('products.store');
+
     Route::get('/products/admin', [ProductController::class , 'indexAdmin'])->name('products.indexAdmin');
     Route::get('/products/admin/{id}', [ProductController::class , 'showProductsAdmin'])->name("products.showAdmin");
 

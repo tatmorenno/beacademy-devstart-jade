@@ -30,4 +30,31 @@ class ProductController extends Controller
         $title = 'Produto ' . $product->name;
         return view('products.showAdmin', compact('product', 'title'));
     }
+
+    public function createProductsAdmin()
+    {
+
+        return view('products.create');
+
+    }
+
+    public function storeCreateProductsAdmin(Request $request)
+    {
+        //dd($request->all());
+        $product = new Product;
+        $product->name = $request->name;
+        $product->cost_price= $request->cost_price;
+        $product->quantity= $request->quantity;
+        $product->sale_price= $request->sale_price;
+        $product->image= $request->image;
+        $product->description= $request->description;
+
+        $product->save();
+
+        return redirect()->route('products.indexAdmin');
+
+    }
+
+
+
 }
