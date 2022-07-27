@@ -1,5 +1,11 @@
 @extends('template.index');
 
+@if (session()-> has('update'))
+    <div class="container  alert alert-success" role="alert">>
+        <strong>Produto alterado com sucesso!</strong> 
+    </div>    
+@endif
+
 <title>{{ $product->name }}</title>
 
 @section('body')
@@ -20,8 +26,10 @@
                                     
                                     <h1></h1>
 
-                                    <a href="" class="btn btn-warning text-white">Editar</a>
-                                    <form class="d-inline-block" action="" method="POST">
+                                    <a href="{{ route('products.edit', $product->id) }}" class="btn btn-warning text-white">Editar</a>
+                                    <form class="d-inline-block" action="{{ route('products.destroy', $product->id) }}" method="POST">
+                                        @method('DELETE')
+                                        @csrf
                                         <button type="submit"class="btn btn-danger text-white">Excluir</button>
                                     </form>
                                 </div>

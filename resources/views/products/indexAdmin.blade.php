@@ -10,6 +10,12 @@
         <hr>
 </div>
 
+@if (session()-> has('destroy'))
+    <div class="container  alert alert-success" role="alert">>
+        <strong>Produto excluído com sucesso!</strong> 
+    </div>    
+@endif
+
 @section('body')
 
 <section>
