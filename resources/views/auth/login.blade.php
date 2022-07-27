@@ -46,7 +46,6 @@
 
                         <a class="small text-muted" href="{{ route('password.request') }}">Esqueceu a senha?</a>
                         <p class="mt-3 mb-3 pb-lg-2" style="color: #393f81;">Não tem uma conta? <a href="{{ route('register') }}" style="color: #393f81;">Cadastre-se aqui</a>.</p>
-                        <!-- <p class="pb-lg-2" style="color: #393f81;">Caso seja um administrador <a href="{{ route('admin.login') }}" style="color: #393f81;">clique aqui</a>.</p> -->
                     </form>
                 </div>
             </div>
