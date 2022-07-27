@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
@@ -40,8 +41,18 @@ class ExampleTest extends TestCase
         $user = User::factory()->create();
         $this->actingAs($user);
         $id = User::all()->random()->id;
-        $response = $this->get('/admin/users/$id/edit');
+        $response = $this->get("/admin/users/{$id}/edit");
+        $response->assertStatus(404);
+    }
+
+    public function test_check_if_user_can_delete_products()
+    {
+        $user = User::factory()->create();
+        $product = Product::factory()->create();
+
+        $this->actingAs($user);
+        $response = $this->actingAs($user)
+            ->delete('/admin/products/' . $product->id);
         $response->assertStatus(302);
-        User::all()->random()->id;
     }
 }
