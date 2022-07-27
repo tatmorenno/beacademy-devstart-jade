@@ -27,8 +27,11 @@ Route::middleware(['auth'])->group(function () {
     // Content after admin auth
     //if ($user->is_admin = 1) {
     //}
+    Route::delete('/products/admin/{id}', [ProductController::class , 'destroyProductsAdmin'])->name('products.destroy');
+    Route::put('/products/admin/{id}', [ProductController::class , 'updateProductsAdmin'])->name('products.update');
+    Route::get('/products/admin/{id}/edit', [ProductController::class , 'editProductsAdmin'])->name('products.edit');
     Route::get('/products/admin/create', [ProductController::class , 'createProductsAdmin'])->name('products.create');
-    Route::post('/products/admin/create', [ProductController::class,'storeCreateProductsAdmin'])->name('products.store');
+    Route::post('/products/admin/create', [ProductController::class , 'storeCreateProductsAdmin'])->name('products.store');
 
     Route::get('/products/admin', [ProductController::class , 'indexAdmin'])->name('products.indexAdmin');
     Route::get('/products/admin/{id}', [ProductController::class , 'showProductsAdmin'])->name("products.showAdmin");
