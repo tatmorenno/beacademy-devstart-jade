@@ -35,6 +35,7 @@ Route::get('/cadastro/sucesso', [UserController::class, 'create_success'])->name
 //Content after authentication for customers
 Route::middleware(['auth'])->group(function () {
     Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+    Route::view('/checkout', 'checkout/checkout');
 });
 
 // Content after admin auth
