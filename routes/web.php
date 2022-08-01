@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\{
     UserController,
     AdminController,
+    CheckoutController,
     ProductController
 };
 
@@ -35,7 +36,8 @@ Route::get('/cadastro/sucesso', [UserController::class, 'create_success'])->name
 //Content after authentication for customers
 Route::middleware(['auth'])->group(function () {
     Route::get('/products', [ProductController::class, 'index'])->name('products.index');
-    Route::view('/checkout', 'checkout/checkout');
+    Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
+    Route::post('/checkout/submit', [CheckoutController::class, 'submit'])->name('checkout.submit');
 });
 
 // Content after admin auth
