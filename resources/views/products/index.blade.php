@@ -107,7 +107,7 @@ session_start();
 
                     echo '<div class="text-center mt-3">';
 
-                        echo '<button class="btn btn-success ms-2">Ir para pagamento</button>';
+
 
                         echo '</div>';
 
@@ -115,7 +115,7 @@ session_start();
 
                     @endphp
 
-
+                    <a href="{{ route('checkout.index') }}" class="btn btn-success ms-2">Ir para pagamento</a>
 
 
                 </div>
