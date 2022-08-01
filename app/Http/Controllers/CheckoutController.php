@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
 use Mailgun\Mailgun;
 
 class CheckoutController extends Controller
@@ -15,13 +16,8 @@ class CheckoutController extends Controller
 
     public function index()
     {
-        $total = 0;
-        $shoppingCarts = shoppingCart::where('user_id', Auth::id())->get();
-        
-            foreach($shoppingCarts as $shoppingCart) {
-                $total += $shoppingCart->product->sale_price * $shoppingCart->quantity;
-            }
-        return view('checkout/checkout', compact('shoppingCarts', 'total'));
+
+        return view('checkout/checkout');
     }
 
     public function submit(Request $request)
@@ -70,5 +66,4 @@ class CheckoutController extends Controller
 
         return view('checkout/success_checkout');
     }
-
 }
