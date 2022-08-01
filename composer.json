@@ -11,6 +11,8 @@
         "laravel/framework": "^9.11",
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
+        "laravelcollective/html": "^6.3",
+        "mailgun/mailgun-php": "^3.5",
         "mbezhanov/faker-provider-collection": "^2.0"
     },
     "require-dev": {
