@@ -46,7 +46,7 @@ session_start();
                                         <s class="card-text text-center px-2 text-secondary">R${{ $value['price'] + 438}}</s>
                                         <p class="card-text text-center px-2 fs-5 fw-bold text-danger">R$ {{ $value['price'] }}</p>
                                         <!-- <a href="?add={{$product->id}}" class="btn btn-primary px-5">Comprar</a> -->
-                                        <a href="?add={{$key}}" class="btn btn-primary py-3 ">Adicionar ao cart</a>
+                                        <a href="?add={{$key}}" class="btn btn-primary py-3 ">Adicionar ao carrinho</a>
                                     </div>
                                 </div>
                             </div>
@@ -64,7 +64,7 @@ session_start();
                 if (isset($_SESSION['cart'][$productId])) {
                 $_SESSION['cart'][$productId]['quantity']++;
                 } else {
-                $_SESSION['cart'][$productId] = array('quantity' => 1, 'name' => $items[$productId]['name'], 'price' => $items[$productId]['price']);
+                $_SESSION['cart'][$productId] = array('quantity' => 1, 'image' => $items[$productId]['image'], 'name' => $items[$productId]['name'], 'price' => $items[$productId]['price']);
                 }
 
 

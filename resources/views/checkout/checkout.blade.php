@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <title>Checkout</title>
 
 <body>
@@ -156,25 +156,24 @@
 
                                     @php
                                     $shoppingCarts = $_SESSION['cart'];
+                                    $total = 0;
                                     @endphp
 
                                     @foreach ($shoppingCarts as $key=> $shoppingCart)
                                     <div class="d-flex align-items-center mb-5">
                                         <div class="flex-shrink-0">
-                                            <img src="https://images.kabum.com.br/produtos/fotos/155473/smartphone-samsung-galaxy-s20-fe-128gb-6gb-ram-octa-core-camera-tripla-carregamento-super-rapido-cloud-navy-sm-g780gzbrzto_1620393794_gg.jpg" class="img-fluid" style="width: 150px;" alt="Generic placeholder image">
+                                            <img src="{{ $shoppingCart['image'] }}" class="img-fluid" style="width: 150px;" alt="Generic placeholder image">
                                         </div>
-                                        <div class="flex-grow-1 ms-3">
+                                        <div class=" card p-3 flex-grow-1 ms-3">
                                             <a href="#!" class="float-end text-black"><i class="fas fa-times"></i></a>
                                             <h5 class="text-primary"> {{ $shoppingCart['name'] }} </h5>
-                                            <h6 style="color: #9e9e9e;">Cor: Branca</h6>
-                                            <div class="d-flex align-items-center">
-                                                <p class="fw-bold mb-0 me-5 pe-3">R$ {{ $shoppingCart['price'] }} </p>
-                                                <div class="def-number-input number-input safari_only">
-                                                    <button class="minus"></button>
-                                                    <input class="quantity fw-bold text-black" min="0" name="quantity" value="{{ $shoppingCart['quantity'] }}">
-                                                    <button></button>
-                                                </div>
-                                            </div>
+                                            <p class="fw-bold text-black text-start mb-2" value="{{ $shoppingCart['quantity'] }}">Quantidade: {{ $shoppingCart['quantity'] }} </p>
+                                            <p class="fw-bold pe-3">Preço: R$ {{ $shoppingCart['price'] }} </p>
+
+                                            @php
+                                            $total += $shoppingCart['price'];
+                                            @endphp
+
                                         </div>
                                     </div>
                                     @endforeach
@@ -183,15 +182,13 @@
 
                                     <div class="d-flex justify-content-between p-2 mb-2" style="background-color: #04a77a57;">
                                         <h5 class="fw-bold mb-0">Total:</h5>
-                                        <h5 class="fw-bold mb-0">R$ </h5>
+                                        <h5 class="fw-bold mb-0">R$ {{$total}}</h5>
                                     </div>
 
                                 </div>
                                 <div class="col-lg-6 px-5 py-4">
 
                                     <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase" style="color:#04A77A">Pagamento</h3>
-
-
 
                                     <div class="form-outline mb-5">
                                         <input type="text" id="typeText" class="form-control form-control-lg" size="17" name="cc_number" minlength="19" maxlength="19" />
@@ -221,9 +218,6 @@
                                     <p class="mb-5">Lorem ipsum dolor sit amet consectetur, adipisicing elit <a href="#!">obcaecati sapiente</a>.</p>
 
                                     <button type="submit" class="btn btn-primary btn-block btn-lg" style="background-color:#04A77A">Comprar</button>
-
-
-
 
                                 </div>
                             </div>
