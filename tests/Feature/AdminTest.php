@@ -23,8 +23,17 @@ class AdminTest extends TestCase
             'phone' => '11988884446',
             'birth_date' => '1990/05/15',
             'cpf' => '45' . random_int(000000000, 999999999),
+            'zipcode' => '05426200',
+            'zipcode' => "17560246",
+            'address' => "Avenida Brigadeiro Faria Lima",
+            'number-house' => "1014",
+            'district' => "Pinheiros",
+            'city' => "São Paulo",
+            'state' => "SP",
             'password' => '12345678',
             'is_admin' => 1
+
+
         ]);
 
         $this->assertTrue($admin->is_admin == 1);
@@ -38,6 +47,13 @@ class AdminTest extends TestCase
             'phone' => '11988884446',
             'birth_date' => '1990/05/15',
             'cpf' => '45' . random_int(000000000, 999999999),
+            'zipcode' => '05426200',
+            'zipcode' => "17560246",
+            'address' => "Avenida Brigadeiro Faria Lima",
+            'number-house' => "1014",
+            'district' => "Pinheiros",
+            'city' => "São Paulo",
+            'state' => "SP",
             'password' => '12345678',
             'is_admin' => 1
         ]);
@@ -56,6 +72,13 @@ class AdminTest extends TestCase
             'phone' => '11988884446',
             'birth_date' => '1990/05/15',
             'cpf' => '45' . random_int(000000000, 999999999),
+            'zipcode' => '05426200',
+            'zipcode' => "17560246",
+            'address' => "Avenida Brigadeiro Faria Lima",
+            'number-house' => "1014",
+            'district' => "Pinheiros",
+            'city' => "São Paulo",
+            'state' => "SP",
             'password' => '12345678',
             'is_admin' => 1
         ]);
@@ -74,6 +97,13 @@ class AdminTest extends TestCase
             'phone' => '11988884446',
             'birth_date' => '1990/05/15',
             'cpf' => '45' . random_int(000000000, 999999999),
+            'zipcode' => '05426200',
+            'zipcode' => "17560246",
+            'address' => "Avenida Brigadeiro Faria Lima",
+            'number-house' => "1014",
+            'district' => "Pinheiros",
+            'city' => "São Paulo",
+            'state' => "SP",
             'password' => '12345678',
             'is_admin' => 1
         ]);
