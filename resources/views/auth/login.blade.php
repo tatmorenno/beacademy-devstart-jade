@@ -7,14 +7,14 @@
     <div class="card shadow">
         <div class="row g-0">
             <div class="col-md-4">
-                <img src="https://cdn.pixabay.com/photo/2019/01/06/20/23/non-woven-bags-3917805_960_720.jpg" class="img-fluid rounded-start" alt="Imagem da página de login de usuário">
+                <img src="{{ asset('assets/img/login.svg') }}" class="img-fluid rounded-start" alt="Imagem da página de login de usuário">
             </div>
             <div class="col-md-8">
                 <div class="card-body">
                     <form class="needs-validation" method="POST" action="{{ route('login') }}" novalidate>
                         @csrf
                         <div class="d-flex align-items-center mb-3 pb-1">
-                            <span class="h1 fw-bold mb-0">Jade Shopp</span>
+                            <span class="h1 fw-bold mb-0" style="color: #04A77A;">Jade Shopp</span>
                         </div>
 
                         <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Acesse sua conta</h5>
