@@ -23,6 +23,13 @@ return new class extends Migration
             $table->string('phone');
             $table->string('birth_date');
             $table->string('cpf')->unique();
+            $table->string('zipcode');
+            $table->string('address');
+            $table->string('number-house');
+            $table->string('complement-house')->nullable();
+            $table->string('district');
+            $table->string('city');
+            $table->string('state');
             $table->rememberToken();
             $table->timestamps();
         });

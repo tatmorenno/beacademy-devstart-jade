@@ -36,6 +36,13 @@ class UserFactory extends Factory
             'phone' => $formatted_phone,
             'birth_date' => $this->faker->dateTimeBetween()->format('Y-m-d'),
             'cpf' =>  $formatted_cpf,
+            'zipcode' => $this->faker->postcode(),
+            'address' => $this->faker->streetAddress(),
+            'number-house' => random_int(0, 99),
+            'district' => "Bairro " . $this->faker->lastName(),
+            'city' => $this->faker->city(),
+            'state' => $this->faker->stateAbbr(),
+
         ];
     }
 

@@ -53,6 +53,43 @@ class StoreUpdateUserFormRequest extends FormRequest
                 'required',
                 'before:today'
             ],
+            'zipcode' => [
+                'required',
+                'string',
+                'min:8',
+                'max:9'
+            ],
+            'address' => [
+                'required',
+                'string',
+                'max:255'
+            ],
+            'number-house' => [
+                'required',
+                'string',
+                'max:10'
+            ],
+            'complement-house' => [
+                'nullable',
+                'string',
+                'max:50'
+            ],
+            'district' => [
+                'required',
+                'string',
+                'max:50'
+            ],
+            'city' => [
+                'required',
+                'string',
+                'max:50'
+            ],
+            'state' => [
+                'required',
+                'string',
+                'max:2'
+            ],
+
         ];
     }
     public function messages()
