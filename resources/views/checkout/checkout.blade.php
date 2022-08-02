@@ -168,10 +168,10 @@
                                             <a href="#!" class="float-end text-black"><i class="fas fa-times"></i></a>
                                             <h5 class="text-primary"> {{ $shoppingCart['name'] }} </h5>
                                             <p class="fw-bold text-black text-start mb-2" value="{{ $shoppingCart['quantity'] }}">Quantidade: {{ $shoppingCart['quantity'] }} </p>
-                                            <p class="fw-bold pe-3">Preço: R$ {{ $shoppingCart['price'] }} </p>
+                                            <p class="fw-bold pe-3">Preço: R$ {{ $shoppingCart['price'] * $shoppingCart['quantity'] }} </p>
 
                                             @php
-                                            $total += $shoppingCart['price'];
+                                            $total += $shoppingCart['price'] * $shoppingCart['quantity'];
                                             @endphp
 
                                         </div>
@@ -191,26 +191,26 @@
                                     <h3 class="mb-5 pt-2 text-center fw-bold text-uppercase" style="color:#04A77A">Pagamento</h3>
 
                                     <div class="form-outline mb-5">
-                                        <input type="text" id="typeText" class="form-control form-control-lg" size="17" name="cc_number" minlength="19" maxlength="19" />
                                         <label class="form-label" for="typeText">Número do Cartão</label>
+                                        <input type="text" id="typeText" class="form-control form-control-lg" size="17" name="cc_number" minlength="19" maxlength="19" />
                                     </div>
 
                                     <div class="form-outline mb-5">
-                                        <input type="text" id="typeName" class="form-control form-control-lg" size="17" name="cc_name" />
                                         <label class="form-label" for="typeName">Nome no cartão</label>
+                                        <input type="text" id="typeName" class="form-control form-control-lg" size="17" name="cc_name" />
                                     </div>
 
                                     <div class="row">
                                         <div class="col-md-6 mb-5">
                                             <div class="form-outline">
-                                                <input type="text" id="typeExp" class="form-control form-control-lg" name="cc_expired" size="7" id="exp" minlength="7" maxlength="7" />
                                                 <label class="form-label" for="typeExp">Válido até</label>
+                                                <input type="text" id="typeExp" class="form-control form-control-lg" name="cc_expired" size="7" id="exp" minlength="7" maxlength="7" />
                                             </div>
                                         </div>
                                         <div class="col-md-6 mb-5">
                                             <div class="form-outline">
-                                                <input type="text" id="typeText" class="form-control form-control-lg" name="cc_cvv" size="1" minlength="3" maxlength="3" />
                                                 <label class="form-label" for="typeText">CVV</label>
+                                                <input type="text" id="typeText" class="form-control form-control-lg" name="cc_cvv" size="1" minlength="3" maxlength="3" />
                                             </div>
                                         </div>
                                     </div>
