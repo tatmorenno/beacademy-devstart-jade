@@ -24,16 +24,16 @@ class ShoppingCart extends Authenticatable
         'user_id',
         'product_id',
         'quantity',
+        'status',
     ];
 
     public function user()
     {
         return $this->hasOne(User::class);
     }
-    
+
     public function product()
     {
         return $this->hasOne(Product::class, 'id', 'product_id');
     }
-    
 }

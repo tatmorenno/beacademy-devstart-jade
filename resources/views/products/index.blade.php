@@ -27,7 +27,7 @@ session_start();
                     @foreach($products as $product)
 
                     @php
-                    array_push($items, ['image' => "$product->image", 'name' =>"$product->name", 'price' => "$product->sale_price"])
+                    array_push($items, ['idProductDb'=>"$product->id", 'image' => "$product->image", 'name' =>"$product->name", 'price' => "$product->sale_price"])
                     @endphp
 
                     @endforeach
@@ -64,7 +64,7 @@ session_start();
                 if (isset($_SESSION['cart'][$productId])) {
                 $_SESSION['cart'][$productId]['quantity']++;
                 } else {
-                $_SESSION['cart'][$productId] = array('quantity' => 1, 'image' => $items[$productId]['image'], 'name' => $items[$productId]['name'], 'price' => $items[$productId]['price']);
+                $_SESSION['cart'][$productId] = array('idProductDb'=>$items[$productId]['idProductDb'], 'quantity' => 1, 'image' => $items[$productId]['image'], 'name' => $items[$productId]['name'], 'price' => $items[$productId]['price']);
                 }
 
 
@@ -115,7 +115,7 @@ session_start();
 
                     @endphp
 
-                    <a href="{{ route('checkout.index') }}" class="btn btn-success ms-2">Ir para pagamento</a>
+                    <a href="/review" class="btn btn-success ms-2">Ir para pagamento</a>
 
 
                 </div>
