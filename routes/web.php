@@ -35,7 +35,10 @@ Route::get('/cadastro/sucesso', [UserController::class, 'create_success'])->name
 // Content after auth
 //Content after authentication for customers
 Route::middleware(['auth'])->group(function () {
+    Route::get('/', [CheckoutController::class, 'storeCart'])->name('checkout.storeCart');
+    Route::get('/review', [CheckoutController::class, 'review'])->name('checkout.review');
     Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+
     Route::get('/checkout', [CheckoutController::class, 'index'])->name('checkout.index');
     Route::post('/checkout/submit', [CheckoutController::class, 'submit'])->name('checkout.submit');
 });
