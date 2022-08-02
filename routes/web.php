@@ -52,9 +52,9 @@ Route::middleware('admin')->group(function () {
 
     // Products
     Route::get('/admin/products', [ProductController::class, 'indexAdmin'])->name('products.indexAdmin');
-    Route::get('/admin/products/{id}', [ProductController::class, 'showProductsAdmin'])->name("products.showAdmin");
     Route::get('/admin/products/create', [ProductController::class, 'createProductsAdmin'])->name('products.create');
     Route::post('/admin/products/create', [ProductController::class, 'storeCreateProductsAdmin'])->name('products.store');
+    Route::get('/admin/products/{id}', [ProductController::class, 'showProductsAdmin'])->name("products.showAdmin");
     Route::put('/admin/products/{id}', [ProductController::class, 'updateProductsAdmin'])->name('products.update');
     Route::get('/admin/products/{id}/edit', [ProductController::class, 'editProductsAdmin'])->name('products.edit');
     Route::delete('/admin/products/{id}', [ProductController::class, 'destroyProductsAdmin'])->name('products.destroy');
