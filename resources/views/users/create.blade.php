@@ -100,9 +100,7 @@
                     </form>
                 </div>
             </div>
-            <div class="col-md-5">
-                <img src="https://cdn.pixabay.com/photo/2019/08/08/20/29/squirrel-4393784_960_720.jpg" class="img-fluid rounded-end h-100" alt="Imagem da pádina de cadastro de usuário">
-            </div>
+
         </div>
     </div>
 </section>

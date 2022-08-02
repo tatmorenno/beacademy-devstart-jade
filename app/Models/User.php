@@ -23,6 +23,13 @@ class User extends Authenticatable
         'phone',
         'birth_date',
         'cpf',
+        'zipcode',
+        'address',
+        'number-house',
+        'complement-house',
+        'district',
+        'city',
+        'state',
         'password',
         'is_admin',
 
