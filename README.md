@@ -169,3 +169,6 @@ Abra o terminal e faça os seguintes comandos:
     </td>
   </tr>
 </table>
+<br><br>
+<p align="center">Feito com 🤩 por nós!</p>
+
