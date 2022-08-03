@@ -105,7 +105,7 @@ Abra o terminal e faça os seguintes comandos:
     <td align="center">
       <a href="https://github.com/tatmorenno">
            <kbd>
-            <img src="https://github.com/tatmorenno.png" width="100px;" alt="Tatiana Moreno"/>
+            <img src="https://github.com/tatmorenno.png" width="200px;" alt="Tatiana Moreno"/>
           </kbd>
         <br>
         <sub>
@@ -118,7 +118,7 @@ Abra o terminal e faça os seguintes comandos:
     <td align="center">
       <a href="https://github.com/ThiagoGalhardo">
         <kbd>
-            <img src="https://github.com/thiagogalhardo.png" width="100px;" alt="Thiago Galhardo"/>
+            <img src="https://github.com/thiagogalhardo.png" width="200px;" alt="Thiago Galhardo"/>
         </kbd>
         <br>
         <sub>
@@ -131,7 +131,7 @@ Abra o terminal e faça os seguintes comandos:
     <td align="center">
       <a href="https://github.com/fabinho-oc">
         <kbd>
-            <img src="https://github.com/fabinho-oc.png" width="100px;" alt="Fabio Costa"/>
+            <img src="https://github.com/fabinho-oc.png" width="200px;" alt="Fabio Costa"/>
         </kbd>
         <br>
         <sub>
@@ -144,7 +144,7 @@ Abra o terminal e faça os seguintes comandos:
     <td align="center">
       <a href="https://github.com/MBCapello">
         <kbd>
-            <img src="https://github.com/MBCapello.png" width="100px;" alt="Marcelo Capello"/>
+            <img src="https://github.com/MBCapello.png" width="200px;" alt="Marcelo Capello"/>
         </kbd>
         <br>
         <sub>
@@ -157,7 +157,7 @@ Abra o terminal e faça os seguintes comandos:
         <td align="center">
       <a href="https://github.com/djaircode">
         <kbd>
-            <img src="https://github.com/djaircode.png" width="100px;" alt="Djair Web"/>
+            <img src="https://github.com/djaircode.png" width="200px;" alt="Djair Web"/>
         </kbd>
         <br>
         <sub>
