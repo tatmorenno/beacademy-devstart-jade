@@ -22,7 +22,7 @@ class ProductController extends Controller
 
     public function indexAdmin()
     {
-        $products = Product::all();
+        $products = Product::paginate(5);
 
         return view('products.indexAdmin', compact('products'));
     }
@@ -59,7 +59,9 @@ class ProductController extends Controller
         $data = $request->all();
         $this->model->create($data);
 
-        return redirect()->route('products.indexAdmin');
+        //return redirect()->route('products.indexAdmin');
+        return redirect()->route('products.indexAdmin')->with('create', 'Produto cadastrado!');
+
 
     }
 

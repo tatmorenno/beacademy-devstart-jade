@@ -1,19 +1,14 @@
-<div style="background-color: #069e6e">
 
     @extends('template.index');
     @section('title', "Produtos")
 
-    <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a href="{{ route('products.indexAdmin') }}" class="nav-link text-white">Home</a>
-        <a href="{{ route('products.create') }}" class="nav-link text-white">Novo produto</a>
-    </nav>
-    <hr>
-
-</div>
-
 @if (session()-> has('destroy'))
-<div class="container  alert alert-success" role="alert">
+<div class="container  alert alert-danger" role="alert">
     <strong>Produto excluído com sucesso!</strong>
+</div>
+@elseif (session()-> has('create'))
+<div class="container  alert alert-success" role="alert">
+    <strong>Produto cadastrado com sucesso!</strong>
 </div>
 @endif
 
@@ -21,9 +16,9 @@
 
 <section>
 
-    <div class="container">
+    <div class="Container pt-5">
 
-        <h1 class="pt-5 text-left text-black">Produtos cadastrados</h1>
+        <h1 class="h1 fw-bold mb-0 " style="color: #04A77A;">Produtos cadastrados</h1>
         <hr>
 
         <div class="d-flex justify-content-center">
@@ -65,11 +60,13 @@
                         @endforeach
                     </tbody>
                 </table>
+
+        <div class=" container justify-content-center pagination">
+            {{ $products->links('pagination::bootstrap-4') }}
+        </div>
             </div>
 
 </section>
-
-
 
 @endsection
 
