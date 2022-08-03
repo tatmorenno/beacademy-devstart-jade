@@ -1,17 +1,8 @@
-<div style="background-color: #069e6e">
 
-    @extends('template.index');
+@extends('template.index');
 
+<title>Cadastro de produtos</title>
 
-
-    <title>Cadastro de produtos</title>
-
-    <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a href="{{ route('products.indexAdmin') }}" class="nav-link text-white">Home</a>
-        <a href="{{ route('products.indexAdmin') }}" class="nav-link text-white">Lista de produtos</a>
-    </nav>
-    <hr>
-</div>
 @section('body')
 
 <section>
@@ -21,7 +12,7 @@
 
         <div class="container mt-8 card text-center py-3 m-3" style="width: 60rem; height: 35rem;">
 
-            <h2 class="pt-5 text-left text-black">Cadastro de produtos</h2>
+            <h2 class="pt-5 text-left h2 fw-bold mb-0" style="color: #04A77A;">Cadastro de produtos</h2>
             <hr>
 
             <div class="input-group mb-3">

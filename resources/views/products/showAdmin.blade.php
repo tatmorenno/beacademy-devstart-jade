@@ -1,7 +1,7 @@
 @extends('template.index');
 
 @if (session()-> has('update'))
-<div class="container  alert alert-success" role="alert">
+<div class="container  alert alert-warning" role="alert">
     <strong>Produto alterado com sucesso!</strong>
 </div>
 @endif
@@ -13,8 +13,8 @@
 <section>
     <div class="container mt-5">
 
-        <h2 class="pt 5 text-left text-black">Produto cadastrado</h2>
-        <h4>{{ $product->name }}</h4>
+        <h2 class="pt 5 text-left h2 fw-bold mb-0 " style="color: #04A77A;">Produto cadastrado</h2>
+        <h4 class="pt 5 text-left h4 fw-bold mb-0 " style="color: #04A77A;">{{ $product->name }}</h4>
         <hr>
         <div class="container w-100 p-3">
             <table class="table table-borderless table -striped align-items-center">
@@ -35,7 +35,7 @@
                             </div>
                         </td>
                         <td class="align-top">
-                            <h5 class="fw-bold">DADOS DO PRODUTO</h5>
+                            <h5 class="h5 fw-bold mb-0 " style="color: #04A77A;;">DADOS DO PRODUTO</h5>
                             <hr>
 
                             <table class="table table-borderless table -striped align-items-center">
@@ -67,7 +67,7 @@
                 <thead class="text-left">
                     <tr>
                         <td class="align-middle" style="width:1900px">
-                            <h6 class="fw-bold">DESCRIÇÃO DO PRODUTO</h6>
+                            <h6 class="h6 fw-bold mb-0 " style="color: #04A77A;">DESCRIÇÃO DO PRODUTO</h6>
                             <p style="text-align: justify">{{ $product->description }}</p>
                         </td>
                     </tr>

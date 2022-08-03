@@ -51,7 +51,8 @@ class UserController extends Controller
 
     public function listUsers()
     {
-        $users = User::all();
+        //$users = User::all();
+        $users = User::paginate(5);
 
         return view('users.list', compact('users'));
     }
@@ -85,7 +86,10 @@ class UserController extends Controller
 
         $data['password'] = $user->password;
         $user->update($data);
-        return redirect()->route('users.list');
+        //return redirect()->route('users.list');
+
+        return redirect()->route('users.show', $user->id)->with('update', 'Usuário alterado!');
+
     }
 
     public function destroyUsers($id)
@@ -94,6 +98,8 @@ class UserController extends Controller
             return redirect()->route('users.list');
 
         $user->delete();
-        return redirect()->route('users.list');
+        //return redirect()->route('users.list');
+
+        return redirect()->route('users.list')->with('destroy', 'Usuário excluido!');
     }
 }

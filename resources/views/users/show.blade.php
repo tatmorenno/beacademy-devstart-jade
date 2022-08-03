@@ -1,21 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @extends('template.index');
     <title>Usuário {{ $user->name }}</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-</head>
 <body>
+
+@if (session()-> has('update'))
+<div class="container  alert alert-warning" role="alert">
+    <strong>Usuário alterado com sucesso!</strong>
+</div>
+@endif
+
     <div class="container pt-5">
-        <h2>Usuário</h2>
-        <h4>{{ $user->name }}</h4>
+        <h2 class="h1 fw-bold mb-0 " style="color: #04A77A;">Usuário</h2>
+        <h4 class="h2 fw-bold mb-0 " style="color: #04A77A;">{{ $user->name }}</h4>
         <hr>
         <table class="table table-hover table -striped">
             <thead class="text-center">
                 <tr>
-                    <th scope="col">Id</th>
+                    <th scope="col">Cód. Cliente</th>
                     <th scope="col">Nome</th>
                     <th scope="col">e-mail</th>
                     <th scope="col">Data de Cadastro</th>
