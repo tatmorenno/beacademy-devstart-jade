@@ -64,12 +64,12 @@ class StoreUpdateUserFormRequest extends FormRequest
                 'string',
                 'max:255'
             ],
-            'number-house' => [
+            'number_house' => [
                 'required',
                 'string',
                 'max:10'
             ],
-            'complement-house' => [
+            'complement_house' => [
                 'nullable',
                 'string',
                 'max:50'
