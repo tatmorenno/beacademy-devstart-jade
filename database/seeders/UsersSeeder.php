@@ -24,7 +24,7 @@ class UsersSeeder extends Seeder
             'cpf' =>  "44455566612",
             'zipcode' => "17560246",
             'address' => "Avenida Brigadeiro Faria Lima",
-            'number-house' => "1014",
+            'number_house' => "1014",
             'district' => "Pinheiros",
             'city' => "São Paulo",
             'state' => "SP",

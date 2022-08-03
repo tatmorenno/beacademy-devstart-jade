@@ -29,6 +29,8 @@ class UserController extends Controller
         $data['password'] = bcrypt($request->password);
         $data['is_admin'] = 0;
 
+        // dd($data);
+
         $this->model->create($data);
 
         return redirect()->route('users.create_success');
@@ -89,7 +91,6 @@ class UserController extends Controller
         //return redirect()->route('users.list');
 
         return redirect()->route('users.show', $user->id)->with('update', 'Usuário alterado!');
-
     }
 
     public function destroyUsers($id)

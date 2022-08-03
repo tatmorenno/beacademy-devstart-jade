@@ -93,9 +93,9 @@
                             </div>
 
                             <div class="form-group col-md-2 mb-3">
-                                <label for="number-house" class="form-label">Número</label>
-                                <input type="text" class="form-control @error('number-house') is-invalid @enderror" name="number-house" id="number-house" value="{{ old('number-house') }}" required>
-                                @error('number-house')
+                                <label for="number_house" class="form-label">Número</label>
+                                <input type="text" class="form-control @error('number_house') is-invalid @enderror" name="number_house" id="number_house" value="{{ old('number_house') }}" required>
+                                @error('number_house')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
@@ -103,8 +103,8 @@
                             </div>
 
                             <div class="form-group col-md-3 mb-3">
-                                <label for="complement-house" class="form-label">Complemento</label>
-                                <input type="text" class="form-control" name="complement-house" id="complement-house" value="{{ old('complement-house') }}">
+                                <label for="complement_house" class="form-label">Complemento</label>
+                                <input type="text" class="form-control" name="complement_house" id="complement_house" value="{{ old('complement_house') }}">
                             </div>
 
                             <div class="form-group col-md-4 mb-3">
@@ -169,7 +169,7 @@
 <script>
     const INPUT_ZIPCODE = document.getElementById('zipcode');
     const INPUT_ADDRESS = document.getElementById('address');
-    const INPUT_NUMBER_HOUSE = document.getElementById('number-house');
+    const INPUT_NUMBER_HOUSE = document.getElementById('number_house');
     const INPUT_DISTRICT = document.getElementById('district');
     const INPUT_CITY = document.getElementById('city');
     const INPUT_STATE = document.getElementById('state');
