@@ -110,7 +110,7 @@ Abra o terminal e faça os seguintes comandos:
         <br>
         <sub>
             <kbd>
-          <b>Tatiana Moreno</b>
+          <b>⭑ Tatiana Moreno</b>
             </kbd>
         </sub>
       </a>
@@ -123,7 +123,7 @@ Abra o terminal e faça os seguintes comandos:
         <br>
         <sub>
             <kbd>
-             <b>Thiago Galhardo</br>
+             <b>⭑ Thiago Galhardo</br>
             </kbd>
         </sub>
       </a>
@@ -136,7 +136,7 @@ Abra o terminal e faça os seguintes comandos:
         <br>
         <sub>
          <kbd>
-            <b>Fabio Costa</b>
+            <b>⭑ Fabio Costa</b>
           </kbd>
         </sub>
       </a>
@@ -149,7 +149,7 @@ Abra o terminal e faça os seguintes comandos:
         <br>
         <sub>
             <kbd>
-                <b>Marcelo Capello</b>
+                <b>✩ Marcelo Capello</b>
              </kbd>
         </sub>
       </a>
@@ -162,7 +162,7 @@ Abra o terminal e faça os seguintes comandos:
         <br>
         <sub>
          <kbd>
-          <b>Djair</b>
+          <b>✩ Djair</b>
          </kbd>
         </sub>
       </a>
