@@ -48,11 +48,12 @@ class CheckoutController extends Controller
             foreach ($shoppingCarts as $shoppingCart) {
                 $total += $shoppingCart->product->sale_price * $shoppingCart->quantity;
             }
+            if ($shoppingCarts == null || $shoppingCarts == "" || !$shoppingCarts) {
+                return redirect()->route('products.index');
+            }
 
             return view('checkout/checkout', compact('shoppingCarts', 'total'));
         }
-
-
 
         return redirect()->route('checkout.index', compact('shoppingCarts'));
     }
