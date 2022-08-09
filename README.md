@@ -7,6 +7,8 @@
 
 **PLATAFORMA** de **VENDAS ONLINE** com **CHECKOUT** integrado.
 
+[Clique aqui para visualizar a aplicação no ar!](https://beacademy-devstart-jade.herokuapp.com/)
+
 *O contexto deste projeto é mínimo no que diz respeito a operações de e-commerce e foca na efetivação do pagamento, portanto questões como logística, descontos e afins não serão levados em consideração na descrição e execução do projeto.*
 
 
