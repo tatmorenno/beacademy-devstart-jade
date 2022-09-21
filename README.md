@@ -131,9 +131,9 @@ Abra o terminal e faça os seguintes comandos:
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/fabinho-oc">
+      <a href="https://github.com/fcostta">
         <kbd>
-            <img src="https://github.com/fabinho-oc.png" width="200px;" alt="Fabio Costa"/>
+            <img src="https://github.com/fcostta.png" width="200px;" alt="Fabio Costa"/>
         </kbd>
         <br>
         <sub>
